@@ -19,10 +19,9 @@ class Program
         job2.endYear = 2020;
         
         Resume r = new Resume();
-        r.name = "Kden Baird";
-
-        r.job.Add(job1);
-        r.job.Add(job2);
+        r._name = "Kden Baird";
+        r._jobs.Add(job1);
+        r._jobs.Add(job2);
         r.Display();
     }
 }
