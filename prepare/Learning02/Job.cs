@@ -1,4 +1,5 @@
-public class Job {
+public class Job 
+{
 
  public string company; 
 
@@ -8,7 +9,8 @@ public class Job {
 
  public int   endYear;
 
- public void Display() {
+ public void Display() 
+    {
     Console.WriteLine($"{jobTitle} {(company)} {startYear} - {endYear}");
     }
    

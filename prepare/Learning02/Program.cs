@@ -1,8 +1,8 @@
-using System;
+/*using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main (string[] args)
     {
         Job job1 = new Job();
         job1.company = "Del Taco";
@@ -18,6 +18,7 @@ class Program
         job2.startYear = 1706;
         job2.endYear = 2020;
         
+        
         Resume r = new Resume();
         r._name = "Kden Baird";
         r._jobs.Add(job1);
@@ -25,3 +26,4 @@ class Program
         r.Display();
     }
 }
+*/
