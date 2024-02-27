@@ -39,12 +39,12 @@ class Program
 
         if (answer >= 70 )
         {
-        Console.Write("Congratulations you passed!");
+        Console.Write("Congratulations you passed!!");
         }
 
         else 
         {
-            Console.WriteLine("You failed. Better luck next time!!");
+            Console.WriteLine("You failed. Better luck next time!");
         }
     }
 }
