@@ -5,6 +5,6 @@ class Program
     static void Main(string[] args)
     {
     
-        BaldEagle Joey = new BaldEagle();
+        Console.WriteLine("Hello WORLD!");
     }
 }
