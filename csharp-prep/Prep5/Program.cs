@@ -40,7 +40,7 @@ class Program
         }
         static void DisplayResult(string name, int number)
         {
-            Console.Write($"{name}, the square of your number is {number}");
+            Console.Write($"{name}, the square of your number is {number}! ");
         }
     }
 }
