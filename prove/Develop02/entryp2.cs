@@ -1,28 +1,19 @@
-public class Entry
+public class CBEntry
 {
-    public string _prompt;
-    
-        
-    public string _date; 
-    public string _input;
-
-    
-    
+    public string _cjbprompt;
+    public string _cjbdate; 
+    public string _cjbinput;
     public string DisplayPrompt()
     {
-        Prompt p = new Prompt();
+        CBPrompt p = new CBPrompt();
         string randomPrompt = p.GeneratePrompt();
         return randomPrompt;
     }
 
-
     public string GetUserInput()
     {
-        
         string userEntry = Console.ReadLine();
-        
         return userEntry;
-
     }
 
 }

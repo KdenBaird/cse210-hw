@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-public class Journal
+public class CBJournal
 {
-    public List <Entry> entries = new List<Entry>();
-     void Menu()
+    public List <CBEntry> entries = new List<CBEntry>();
+     public void Menu()
     {
         Console.WriteLine("1: New Entry: ");
         Console.WriteLine("2: Display Entries: ");
@@ -13,46 +13,32 @@ public class Journal
         Console.Write("Choose Option (1-5): ");
     }
 //study this to understand how objects work.
-     void GetEntry(Journal jobject)
+      
+//study this to understand how parameters get passed in, and how objects work. 
+     public void Display(CBJournal jobject)
     {
-        Entry entryObject = new Entry();
-        entryObject._prompt = entryObject.DisplayPrompt();
-        Console.WriteLine(entryObject._prompt);
-        entryObject._date = DateTime.Now.ToString("MM-dd-yyyy HH:mm");
-        entryObject._input = entryObject.GetUserInput();
-        jobject.entries.Add(entryObject);
-        
-    }
-//study this to understand hwo parameters get passed in, and how objects work. 
-     void Display(Journal jobject)
-    {
-        foreach (Entry entries in jobject.entries) 
+        foreach (CBEntry entries in jobject.entries) 
         {
-            Console.WriteLine($"{entries._prompt}");
-            Console.WriteLine($"{entries._date}");
-            Console.WriteLine($"{entries._input}");
+            Console.WriteLine($"{entries._cjbprompt}");
+            Console.WriteLine($"{entries._cjbdate}");
+            Console.WriteLine($"{entries._cjbinput}");
         }
     }
-     void Save(Journal jobject)
+     public void Save(CBJournal jobject)
     {
-
         Console.Write("Enter a filename: ");
         string fileName = Console.ReadLine(); 
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            foreach (Entry entries in jobject.entries)
+            foreach (CBEntry entries in jobject.entries)
             {
-                outputFile.WriteLine($"{entries._prompt}");
-                outputFile.WriteLine($"{entries._date}");
-                outputFile.WriteLine($"{entries._input}");
+                outputFile.WriteLine($"{entries._cjbprompt} || {entries._cjbdate} || {entries._cjbinput}");
             }
-
         }
     }
 
-    void Load(Journal jobject)
+    public void Load(CBJournal jobject)
     {
-
         Console.Write("Enter a filename: ");
         string fileName = Console.ReadLine();
         using (StreamReader reader = new StreamReader(fileName))
@@ -66,35 +52,4 @@ public class Journal
     
     }
 
-    static void Main(string[] args)
-    {
-        Journal journal = new Journal();
-        while (true)
-        {
-        journal.Menu();        
-        string input = Console.ReadLine();
-            if (input == "1")
-            {
-                journal.GetEntry(journal);
-            }
-            else if (input == "2")
-            {
-                journal.Display(journal);
-            }
-           else if (input == "3")
-            {
-                journal.Save(journal);
-            }
-            else if (input == "4")
-            {
-                journal.Load(journal);
-            }
-            else if (input == "5")
-            {
-                Console.Write("Bye");
-                break;
-            }
-        }
-    }
-    
 }
