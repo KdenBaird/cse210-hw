@@ -3,9 +3,8 @@ public class CBEntry
     public string _cjbprompt;
     public string _cjbdate; 
     public string _cjbinput;
-    public string DisplayPrompt()
+    public string DisplayPrompt(CBPrompt p )
     {
-        CBPrompt p = new CBPrompt();
         string randomPrompt = p.GeneratePrompt();
         return randomPrompt;
     }
