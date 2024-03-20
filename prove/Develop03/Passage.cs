@@ -8,19 +8,19 @@ List <CBWord> _cjbwords;
 List <bool> _cjbisNotHidden;
 
 //Constructors:
-CBPassage passage = new(string CBPassage);
+// CBPassage passage = new(string CBPassage);
 
 //Methods:
-ToString()
-{
+// ToString()
+// {
 
-}
-HideWord()
-{
+// }
+// HideWord()
+// {
 
-}
-IsCompletelyHidden()
-{
+// }
+// IsCompletelyHidden()
+// {
     
-}
+// }
 }

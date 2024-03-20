@@ -6,37 +6,41 @@ class Program
     
     static void Main(string[] args)
     {
+        // CBWord wordObj = new CBWord();
+        // wordObj.SetWord("test1");
+        // string wordString = wordObj.GetWord();
+
+
         CBScripture scrip = new CBScripture();
 
-        while (true)
+        bool done = false;
+        while (done == false)
         {
         scrip.Menu();
         string input = Console.ReadLine();
-        //Choose Scripture
-        if (input == "1")
-            {
-                scrip.DisplayScripture();
-            }
+        
         //Pick Random Scripture
-        else if (input == "2")
+        if (input == "1")
             {
                 scrip.ChooseRandomScripture();
             }
-        //Add Scripture
-        else if (input == "3")
+        
+        else if (input == "2")
             {
-                scrip.AddScripture();
+                scrip.ScriptureMemorizer();
             }
+        
+        
         //Quit Program
-        else if (input == "4")
+        else if (input == "quit")
             {
                 Console.Write("Bye!");
-                break;
+                done = true;
             }
         //Error handling asks user to enter valid numb
-        else;
+        else
             {
-                Console.WriteLine("Please enter either 1, 2, 3, or 4. ");
+                Console.WriteLine("Please enter either 1, 2 or 'quit'. ");
                 scrip.Menu();
             }
         }
