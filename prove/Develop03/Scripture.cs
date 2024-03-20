@@ -119,8 +119,8 @@ class CBScripture
     }
     public void Menu()
     {
-        Console.WriteLine("1: Select a random scripture to display: ");
-        Console.WriteLine("2: Memorize a random scripture: ");
+        Console.WriteLine("1: Type '1' first to select a random Scripture to Memorize: ");
+        Console.WriteLine("2: Type '2' to display the random scripture: ");
         Console.WriteLine("3: Type 'quit': Quit Program:");
     }
 }
