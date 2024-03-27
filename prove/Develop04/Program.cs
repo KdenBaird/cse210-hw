@@ -14,8 +14,9 @@ class CBProgram
 
     static void Main(string[] args)
     {
-        CBProgram p = new CBProgram();
-
+        // ask what the purpose of these constructors are? Are they to be able to call things in that class?
+        CBProgram p = new();
+        
         bool done = false;
         while (done == false)
         {
@@ -25,17 +26,23 @@ class CBProgram
 
             if (input == "1")
                 {
-                    CBBreathing.Run();
+                    Console.WriteLine("\nHow long do you want your duration to be for the breathing activity?");
+                    float userDuration = float.Parse(Console.ReadLine());
+                    CBBreathing b = new CBBreathing(userDuration);
                 }
 
             else if (input == "2")
                 {
-                    CBReflection.Run();
+                    Console.WriteLine("\nHow long do you want your duration to be for the reflection activity?");
+                    float userDuration = float.Parse(Console.ReadLine());
+                    CBReflection r = new CBReflection(userDuration);
                 }
 
             else if (input == "3")
                 {
-                    CBListing.Run();
+                    Console.WriteLine("\nHow long do you want your duration to be for the reflection activity?");
+                    float userDuration = float.Parse(Console.ReadLine());
+                    CBListing l = new CBListing(userDuration);   
                 }
 
             else
@@ -43,9 +50,6 @@ class CBProgram
                     Console.WriteLine("Bye!");
                     done = true;
                 }
-
-
-            
         }
     }
 }
