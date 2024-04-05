@@ -26,29 +26,30 @@ class CBProgram
 
             if (input == "1")
                 {
-                    Console.WriteLine("\nHow long do you want your duration to be for the breathing activity?");
-                    float userDuration = float.Parse(Console.ReadLine());
-                    CBBreathing b = new CBBreathing(userDuration);
+                Console.WriteLine("\nHow long do you want your duration to be for the breathing activity?");
+                float userDuration = float.Parse(Console.ReadLine());
+                CBBreathing b = new CBBreathing(userDuration);
+                
                 }
 
             else if (input == "2")
                 {
-                    Console.WriteLine("\nHow long do you want your duration to be for the reflection activity?");
-                    float userDuration = float.Parse(Console.ReadLine());
-                    CBReflection r = new CBReflection(userDuration);
+                Console.WriteLine("\nHow long do you want your duration to be for the reflection activity?");
+                float userDuration = float.Parse(Console.ReadLine());
+                CBReflection r = new CBReflection(userDuration);
                 }
 
             else if (input == "3")
                 {
-                    Console.WriteLine("\nHow long do you want your duration to be for the reflection activity?");
-                    float userDuration = float.Parse(Console.ReadLine());
-                    CBListing l = new CBListing(userDuration);   
+                Console.WriteLine("\nHow long do you want your duration to be for the reflection activity?");
+                float userDuration = float.Parse(Console.ReadLine());
+                CBListing l = new CBListing(userDuration);   
                 }
 
             else
                 {
-                    Console.WriteLine("Bye!");
-                    done = true;
+                Console.WriteLine("Bye!");
+                done = true;
                 }
         }
     }

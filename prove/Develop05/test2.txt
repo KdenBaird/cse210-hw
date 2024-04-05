@@ -1,0 +1,3 @@
+CBSimple:simple ,5,True
+CBEternal:eternal,10,False
+CBChecklist:checklist,10,False
