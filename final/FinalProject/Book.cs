@@ -1,4 +1,5 @@
 using System;
+using Microsoft.VisualBasic;
 
 public class CBBook : CBLibraryItem
 {
@@ -16,6 +17,18 @@ public class CBBook : CBLibraryItem
         _cjbIsbn = isbn;
     }
     
+     // Public properties to access the private fields
+     // (Chat GPT helped me in creating these public properties)
+     // public string Author: This declares a public property named Author, which returns a string.
+     // This is called the expression body arrow. It's a syntactic shortcut used to define a read-only property. It's equivalent to writing { get { return _cjbAuthor; } }.
+     // cjbAuthor: This is the value that the Author property will return. It accesses the private field _cjbAuthor within the class.
+     // Notes: Read-only properties in C# are properties that can only be read, not written. Once set, their values cannot be changed. They are useful when you want 
+     // to expose a property publicly but prevent external code from modifying its value after it has been initialized.
+    public string Author => _cjbAuthor;
+    public string Genre => _cjbGenre;
+    public string Isbn => _cjbIsbn;
+    public string Title => _cjbTitle;
+    public bool Availability => _cjbAvailability;
 
     // Methods
     public override void CBCheckOut()

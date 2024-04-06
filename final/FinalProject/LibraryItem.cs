@@ -7,6 +7,10 @@ public class CBLibraryItem
     protected bool _cjbAvailability;
 
     // Constructor
+    public CBLibraryItem()
+    {
+        
+    }
     public CBLibraryItem(string title = "", bool availability = false)
     {
         _cjbTitle = title;

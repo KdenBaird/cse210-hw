@@ -15,7 +15,9 @@
     }
 
     // Methods
-    public decimal CalculateFine() {
+    // Change this to float: not void.
+    public void CalculateFine() 
+    {
         // Implementation for calculating fine
     }
 

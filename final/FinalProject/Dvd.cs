@@ -5,6 +5,7 @@ public class CBDVD : CBLibraryItem
     // Additional attributes specific to DVD
     private string _cjbDirector;
     private int _cjbDuration; // Duration in minutes
+    private List <CBDVD> _cjbDVDs;
 
     // Constructor
     public CBDVD(string title, string director, int duration, bool availability)
@@ -13,6 +14,13 @@ public class CBDVD : CBLibraryItem
         _cjbDirector = director;
         _cjbDuration = duration;
     }
+    public CBDVD(){}
+    public string Director => _cjbDirector;
+    public int Duration => _cjbDuration;
+    
+    public string Title => _cjbTitle;
+    public bool Availability => _cjbAvailability;
+
 
     // Methods
     public override void CBCheckOut()
@@ -20,6 +28,13 @@ public class CBDVD : CBLibraryItem
         // Implementation for checking out a DVD
         base.CBCheckOut(); // Optionally call base class method
     }
+    public List<CBDVD> GetCjbDVDs()
+    {
+        return _cjbDVDs;
+    }
+
+    // Setter for _cjbDVDs
+   
 
     public override void CBReturn()
     {
@@ -33,5 +48,4 @@ public class CBDVD : CBLibraryItem
     Console.WriteLine($"Director: {_cjbDirector}");
     Console.WriteLine($"Duration: {_cjbDuration} minutes");
     }
-
 }
