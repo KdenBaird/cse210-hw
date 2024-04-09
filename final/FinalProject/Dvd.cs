@@ -23,25 +23,26 @@ public class CBDVD : CBLibraryItem
 
 
     // Methods
-    public override void CBCheckOut()
+    /*public override void CBCheckOut()
     {
         // Implementation for checking out a DVD
         base.CBCheckOut(); // Optionally call base class method
     }
+    */
     public List<CBDVD> GetCjbDVDs()
     {
         return _cjbDVDs;
     }
-
-    // Setter for _cjbDVDs
-   
-
-    public override void CBReturn()
+    protected override void CBReturnItem()
     {
         // Implementation for returning a DVD
         base.CBReturn(); // Optionally call base class method
     }
-
+    
+    public void CBReturnDVDItem()
+    {
+        CBReturnItem();
+    }
     public override void CBDisplayDetails()
     {
     base.CBDisplayDetails(); // Call base class implementation first

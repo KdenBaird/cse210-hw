@@ -15,7 +15,7 @@ class CBFine
     // Methods
     public decimal CBCalculateFine() {
         // Implementation for calculating fine
-        return 0.0m; // Placeholder return value
+        return 0.0m; 
     }
 
     public void CBDisplayFineDetails() {

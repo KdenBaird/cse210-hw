@@ -31,23 +31,72 @@ public class CBBook : CBLibraryItem
     public bool Availability => _cjbAvailability;
 
     // Methods
-    public override void CBCheckOut()
+
+    public CBBook()
     {
-        // Implementation for checking out a book
-        base.CBCheckOut(); // Optionally call base class method
+        
     }
 
-    public override void CBReturn()
+    public void CBCheckoutBook()
+    {
+        // Check if the book is available
+        if (Availability)
+        {
+            // Set the availability to false, indicating the book is checked out
+            SetAvailability(false);
+            Console.WriteLine($"Book '{Title}' checked out successfully!\n");
+        }
+        else
+        {
+            Console.WriteLine("Book is already checked out.");
+        }
+
+    }
+    protected override void CBReturnItem()
+    {
+        CBLibrary libObject = new();
+        Console.WriteLine("Please enter the ISBN of the book you would like to return: ");
+        string userInput = Console.ReadLine();
+        CBBook bookToReturn = libObject.FindBookByISBN(userInput);
+
+        if (bookToReturn != null && !bookToReturn.Availability)
+        {
+        // Book found and it's checked out
+        Console.WriteLine("Returning the book...");
+        // Update the book's availability
+        bookToReturn.SetAvailability(true);
+        Console.WriteLine("Book returned successfully.");
+        }
+    else if (bookToReturn != null && bookToReturn.Availability)
+        {
+        // Book found but it's already available
+        Console.WriteLine("This book is not checked out.");
+        }
+    else
+        {
+        // Book not found
+        Console.WriteLine("Book not found.");
+        }
+    }
+    public void CBReturnBookItem()
+    {
+        CBReturnItem();
+    }
+}
+
+   /* public override void CBReturn()
     {
         // Implementation for returning a book
         base.CBReturn(); // Optionally call base class method
     }
+    */
 
-    public override void CBDisplayDetails()
+   /* public override void CBDisplayDetails()
     {
     base.CBDisplayDetails(); // Call base class implementation first
     Console.WriteLine($"Author: {_cjbAuthor}");
     Console.WriteLine($"ISBN: {_cjbIsbn}");
     Console.WriteLine($"Genre: {_cjbGenre}");
     }
-}
+    */
+
